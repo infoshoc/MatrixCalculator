@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">MatrixCalculator</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+<!-- Functions -->
+    <string name="determinant">Determinant</string>
+    <string name="rank">Rank</string>
+    <string name="transposed">Transposed</string>
+    <string name="rref">Reduced row echelon form</string>
+    <string name="reverse">Reverse</string>
+    <string name="adjudate">Adjugate</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="multiply">*</string>
+
+<!-- Errors -->
+    <string name="not_square_matrix_error">Impossible to calculate, matrix is not square</string>
+    <string name="irreversible_matrix_error">Impossible to calculate, matrix is irreversible</string>
+    <string name="different_matrices_size_error">Impossible to calculate, matrices have different size</string>
+    <string name="inappropriate_matrices_size_error">Impossible to calculate, matrices have inappropriate size</string>
+
+
+</resources>
