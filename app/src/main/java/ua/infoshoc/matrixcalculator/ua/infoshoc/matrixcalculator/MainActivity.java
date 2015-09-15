@@ -1,7 +1,7 @@
 package ua.infoshoc.matrixcalculator;
 
+import android.app.Activity;
 import android.content.res.Configuration;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
-public class MainActivity extends ActionBarActivity implements View.OnClickListener {
+public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -47,13 +47,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         MatrixInFragment matrix2InFragment = (MatrixInFragment) getFragmentManager().findFragmentById(R.id.input2_matrix_fragment);
 
         Matrix matrixIn = null, matrix1In = null, matrix2In = null;
-        if (matrixInFragment != null) {
+        if (matrixInFragment.isVisible()) {
             matrixIn = matrixInFragment.getMatrix();
         }
-        if (matrix1InFragment != null) {
+        if (matrix1InFragment.isVisible()) {
             matrix1In = matrix1InFragment.getMatrix();
         }
-        if (matrix2InFragment != null) {
+        if (matrix2InFragment.isVisible()) {
             matrix2In = matrix2InFragment.getMatrix();
         }
 
