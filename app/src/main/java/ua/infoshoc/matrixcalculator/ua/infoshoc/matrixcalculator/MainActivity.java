@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -24,6 +25,7 @@ public class MainActivity extends ActionBarActivity {
             findViewById(R.id.rref_button).setOnClickListener(OnClickListener);
             findViewById(R.id.reverse_button).setOnClickListener(OnClickListener);
             findViewById(R.id.adjugate_button).setOnClickListener(OnClickListener);
+            findViewById(R.id.power_button).setOnClickListener(OnClickListener);
         } else {
             // Landscape Orientation
             findViewById(R.id.plus_button).setOnClickListener(OnClickListener);
@@ -98,7 +100,16 @@ public class MainActivity extends ActionBarActivity {
                         answerText = getString(R.string.not_square_matrix_error);
                     }
                     break;
-
+                case R.id.power_button:
+                    EditText exponentEditText = (EditText) findViewById(R.id.exponent_edit_text);
+                    String exponentString = exponentEditText.getText().toString();
+                    int exponent = Integer.parseInt(exponentString);
+                    try {
+                        result = matrixIn.binpow(exponent);
+                    } catch (Matrix.NotSquareMatrixException e) {
+                        answerText = getString(R.string.not_square_matrix_error);
+                    }
+                    break;
 
                 case R.id.plus_button:
                     try {

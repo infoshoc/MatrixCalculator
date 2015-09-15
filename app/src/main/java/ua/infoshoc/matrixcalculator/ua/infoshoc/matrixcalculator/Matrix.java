@@ -5,6 +5,7 @@ import android.os.Parcelable;
 import android.util.Log;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -21,6 +22,15 @@ public class Matrix implements Serializable {
     public class InappropriateMatricesSizeException extends Exception { }
 
     public final class DifferentMatricesSizeException extends InappropriateMatricesSizeException {}
+
+    // Static "constructors"
+    public final static Matrix getIdentityMatrix(int size) {
+        Matrix result = new Matrix(size, size);
+        for (int row = 0; row < size; ++row) {
+            result.set(row, row, Element.ONE);
+        }
+        return result;
+    }
 
     // Fields
     private ArrayList<ArrayList<Element>> items;
@@ -271,6 +281,28 @@ public class Matrix implements Serializable {
         }
 
         return result;
+    }
 
+    public Matrix binpow(int exponent) throws NotSquareMatrixException {
+        if (getWidth() != getHeight()) {
+            throw new NotSquareMatrixException();
+        }
+
+        Matrix result = Matrix.getIdentityMatrix(getWidth());
+
+        Matrix base = this;
+        try {
+            while (exponent != 0) {
+                if (exponent % 2 == 1) {
+                    result = result.multiply(base);
+                }
+                base = base.multiply(base);
+                exponent /= 2;
+            }
+        } catch (InappropriateMatricesSizeException e) {
+            // Impossible exception
+        }
+
+        return result;
     }
 }

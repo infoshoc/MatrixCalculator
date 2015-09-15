@@ -76,13 +76,29 @@
             android:id="@+id/adjugate_button"
             android:layout_below="@+id/reverse_button" />
 
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/exponent_edit_text"
+            android:layout_below="@+id/adjugate_button"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/power"
+            android:id="@+id/power_button"
+            android:layout_below="@+id/adjugate_button"
+            android:layout_toRightOf="@+id/exponent_edit_text"/>
 
         <fragment android:name="ua.infoshoc.matrixcalculator.MatrixOutFragment"
             android:id="@+id/output_matrix_fragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/adjugate_button"
+            android:layout_below="@+id/exponent_edit_text"
             tools:layout="@layout/fragment_matrix_out"></fragment>
+
 
 
         </RelativeLayout>
