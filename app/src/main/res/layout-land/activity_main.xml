@@ -16,13 +16,6 @@
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:id="@+id/radioButton" />
-
             <fragment android:name="ua.infoshoc.matrixcalculator.MatrixInFragment"
                 android:id="@+id/input1_matrix_fragment"
                 android:layout_width="wrap_content"
@@ -56,12 +49,6 @@
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/radioButton2" />
-
             <fragment android:name="ua.infoshoc.matrixcalculator.MatrixInFragment"
                 android:id="@+id/input2_matrix_fragment"
                 android:layout_width="wrap_content"

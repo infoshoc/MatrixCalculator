@@ -3,6 +3,7 @@ package ua.infoshoc.matrixcalculator;
 
 import android.app.ExpandableListActivity;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.text.InputType;
@@ -128,9 +129,6 @@ public class MatrixInFragment extends Fragment {
                     int next_col = (col + 1)%cols;
                     int next_row = row + (next_col == 0 ? 1 : 0);
                     if (next_row != rows) {
-                        if (Debug.enabled) {
-                            Log.d("DEBUG", "next(" + row + "," + col + ")[id=" + get(row, col).getId() + "]=(" + next_row + "," + next_col + ")[id=" + get(next_row, next_col).getId() + "]");
-                        }
                         get(row, col).setNextFocusDownId(get(next_row, next_col).getId());
                     }
                 }
@@ -143,24 +141,23 @@ public class MatrixInFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View result = inflater.inflate(R.layout.fragment_matrix_in, container, false);
+
         removeColumnButton = (Button) result.findViewById(R.id.rem_col);
         removeRowButton = (Button) result.findViewById(R.id.rem_row);
-        result.findViewById(R.id.add_row).setOnClickListener(onClick);
-        result.findViewById(R.id.add_col).setOnClickListener(onClick);
+        Button addRowButton = (Button) result.findViewById(R.id.add_row);
+        Button addColumnButton = (Button) result.findViewById(R.id.add_col);
+
+        addRowButton.setOnClickListener(onClick);
+        addColumnButton.setOnClickListener(onClick);
         removeColumnButton.setOnClickListener(onClick);
         removeRowButton.setOnClickListener(onClick);
-        rows = cols = 0;
-
-        return result;
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
 
         if (savedInstanceState == null) {
-            getView().findViewById(R.id.add_row).callOnClick();
-            getView().findViewById(R.id.add_col).callOnClick();
+            rows = cols = 0;
+            addRowButton.callOnClick();
+            addColumnButton.callOnClick();
         }
+
+        return result;
     }
 }
