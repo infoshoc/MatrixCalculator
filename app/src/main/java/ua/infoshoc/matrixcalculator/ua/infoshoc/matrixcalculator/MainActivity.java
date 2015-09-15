@@ -18,21 +18,21 @@ public class MainActivity extends ActionBarActivity {
 
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             // Portrait Orientation
-            findViewById(R.id.determinant_button).setOnClickListener(portraitOnClickListener);
-            findViewById(R.id.rank_button).setOnClickListener(portraitOnClickListener);
-            findViewById(R.id.transposed_button).setOnClickListener(portraitOnClickListener);
-            findViewById(R.id.rref_button).setOnClickListener(portraitOnClickListener);
-            findViewById(R.id.reverse_button).setOnClickListener(portraitOnClickListener);
-            findViewById(R.id.adjugate_button).setOnClickListener(portraitOnClickListener);
+            findViewById(R.id.determinant_button).setOnClickListener(OnClickListener);
+            findViewById(R.id.rank_button).setOnClickListener(OnClickListener);
+            findViewById(R.id.transposed_button).setOnClickListener(OnClickListener);
+            findViewById(R.id.rref_button).setOnClickListener(OnClickListener);
+            findViewById(R.id.reverse_button).setOnClickListener(OnClickListener);
+            findViewById(R.id.adjugate_button).setOnClickListener(OnClickListener);
         } else {
             // Landscape Orientation
-            findViewById(R.id.plus_button).setOnClickListener(landscapeOnClickListener);
-            findViewById(R.id.minus_button).setOnClickListener(landscapeOnClickListener);
-            findViewById(R.id.multiply_button).setOnClickListener(landscapeOnClickListener);
+            findViewById(R.id.plus_button).setOnClickListener(OnClickListener);
+            findViewById(R.id.minus_button).setOnClickListener(OnClickListener);
+            findViewById(R.id.multiply_button).setOnClickListener(OnClickListener);
         }
     }
 
-    View.OnClickListener portraitOnClickListener = new View.OnClickListener() {
+    View.OnClickListener OnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             MatrixOutFragment outputMatrixFragment = (MatrixOutFragment) getFragmentManager().findFragmentById(R.id.output_matrix_fragment);
@@ -42,7 +42,19 @@ public class MainActivity extends ActionBarActivity {
 
 
             MatrixInFragment matrixInFragment = (MatrixInFragment) getFragmentManager().findFragmentById(R.id.input_matrix_fragment);
-            Matrix matrixIn = matrixInFragment.getMatrix();
+            MatrixInFragment matrix1InFragment = (MatrixInFragment) getFragmentManager().findFragmentById(R.id.input1_matrix_fragment);
+            MatrixInFragment matrix2InFragment = (MatrixInFragment) getFragmentManager().findFragmentById(R.id.input2_matrix_fragment);
+
+            Matrix matrixIn = null, matrix1In = null, matrix2In = null;
+            if (matrixInFragment != null) {
+                matrixIn = matrixInFragment.getMatrix();
+            }
+            if (matrix1InFragment != null) {
+                matrix1In = matrix1InFragment.getMatrix();
+            }
+            if (matrix2InFragment != null) {
+                matrix2In = matrix2InFragment.getMatrix();
+            }
 
             String answerText = null;
             Matrix result = null;
@@ -86,35 +98,8 @@ public class MainActivity extends ActionBarActivity {
                         answerText = getString(R.string.not_square_matrix_error);
                     }
                     break;
-            }
 
-            if (result != null) {
-                outputMatrixFragment.setMatrix(result);
-            }
 
-            if (answerText != null) {
-                answerTextView.setText(answerText);
-            }
-
-        }
-    };
-
-    View.OnClickListener landscapeOnClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            MatrixOutFragment outputMatrixFragment = (MatrixOutFragment) getFragmentManager().findFragmentById(R.id.output_matrix_fragment);
-            outputMatrixFragment.clearComposingMatrix();
-
-            MatrixInFragment matrix1InFragment = (MatrixInFragment) getFragmentManager().findFragmentById(R.id.input1_matrix_fragment);
-            MatrixInFragment matrix2InFragment = (MatrixInFragment) getFragmentManager().findFragmentById(R.id.input2_matrix_fragment);
-            TextView answerTextView = (TextView) findViewById(R.id.answer_textView);
-
-            Matrix matrix1In = matrix1InFragment.getMatrix();
-            Matrix matrix2In = matrix2InFragment.getMatrix();
-
-            Matrix result = null;
-            String answerText = null;
-            switch (v.getId()) {
                 case R.id.plus_button:
                     try {
                         result = matrix1In.add(matrix2In);

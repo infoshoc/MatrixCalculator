@@ -83,7 +83,7 @@ public class MatrixInFragment extends Fragment {
         return editText;
     }
 
-    private Button removeColumnButton,removeRowButton;
+    private Button removeColumnButton, removeRowButton, addColumnButton, addRowButton;
 
     private View.OnClickListener onClick = new View.OnClickListener() {
         @Override
@@ -144,20 +144,25 @@ public class MatrixInFragment extends Fragment {
 
         removeColumnButton = (Button) result.findViewById(R.id.rem_col);
         removeRowButton = (Button) result.findViewById(R.id.rem_row);
-        Button addRowButton = (Button) result.findViewById(R.id.add_row);
-        Button addColumnButton = (Button) result.findViewById(R.id.add_col);
+        addRowButton = (Button) result.findViewById(R.id.add_row);
+        addColumnButton = (Button) result.findViewById(R.id.add_col);
 
         addRowButton.setOnClickListener(onClick);
         addColumnButton.setOnClickListener(onClick);
         removeColumnButton.setOnClickListener(onClick);
         removeRowButton.setOnClickListener(onClick);
 
+        return result;
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
         if (savedInstanceState == null) {
             rows = cols = 0;
             addRowButton.callOnClick();
             addColumnButton.callOnClick();
         }
-
-        return result;
     }
 }
