@@ -134,7 +134,7 @@ public class Matrix implements Serializable {
 
         Matrix result = new Matrix(getHeight(), getWidth());
         for (int row = 0; row < getHeight(); ++row) {
-            if (RREFMatrix.get(row, row).substract(Element.ONE).abs().compareTo(Element.EPS) != 0) {
+            if (RREFMatrix.get(row, row).substract(Element.ONE).abs().compareTo(Element.EPS) != -1) {
                 throw new IrreversibleMatrixException();
             }
             for (int col = 0; col < getWidth(); ++col) {
