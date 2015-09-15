@@ -5,7 +5,7 @@ import android.content.Intent;
 /**
  * Created by Infoshoc_2 on 16.05.2015.
  */
-public class Element {
+public class Element implements Comparable {
     private Double value;
 
     public static final Element ZERO = new Element(0.0);
@@ -38,9 +38,12 @@ public class Element {
         return new Element(value + operand.value);
     }
 
-    public int compareTo(Element val) { return value.compareTo(val.value); }
-
     public Element abs() { return new Element(Math.abs(value)); }
 
     public String getString() { return value.toString(); }
+
+    @Override
+    public int compareTo(Object another) {
+        return value.compareTo(((Element)another).value);
+    }
 }

@@ -25,15 +25,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5cc9de4-94bc-4515-9cc3-ecaf55992e8d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/Matrix.java" afterPath="$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/Matrix.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout-port/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-port/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/Element.java" afterPath="$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/Element.java" />
     </list>
     <ignored path="MatrixCalculator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,6 +86,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Element.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/Element.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.32692307">
+              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+              <folding>
+                <element signature="e#528#529#0" expanded="true" />
+                <element signature="e#576#577#0" expanded="true" />
+                <element signature="e#1078#1079#0" expanded="true" />
+                <element signature="e#1135#1136#0" expanded="true" />
+                <element signature="e#1320#1321#0" expanded="true" />
+                <element signature="e#1384#1385#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -113,10 +122,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Matrix.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Matrix.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/Matrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6076923">
+            <state vertical-scroll-proportion="0.0">
               <caret line="302" column="25" selection-start-line="302" selection-start-column="15" selection-end-line="302" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -1592,7 +1601,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/Debug.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/MatrixOutFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/Element.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_matrix_in.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-port/fragment_matrix_in.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" />
@@ -1601,6 +1609,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout-port/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/Matrix.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/Element.java" />
       </list>
     </option>
   </component>
@@ -2565,13 +2574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/Element.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="android-dummy://C:\MyProg\AndroidStudioProjects\MatrixCalculator/app/Translations Editor">
       <provider selected="true" editor-type-id="string-resource-editor">
         <state />
@@ -2754,14 +2756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/MatrixInFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2781,10 +2775,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6076923">
+        <state vertical-scroll-proportion="0.0">
           <caret line="302" column="25" selection-start-line="302" selection-start-column="15" selection-end-line="302" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/MatrixInFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ua/infoshoc/matrixcalculator/ua/infoshoc/matrixcalculator/Element.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32692307">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding>
+            <element signature="e#528#529#0" expanded="true" />
+            <element signature="e#576#577#0" expanded="true" />
+            <element signature="e#1078#1079#0" expanded="true" />
+            <element signature="e#1135#1136#0" expanded="true" />
+            <element signature="e#1320#1321#0" expanded="true" />
+            <element signature="e#1384#1385#0" expanded="true" />
           </folding>
         </state>
       </provider>
