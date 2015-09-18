@@ -47,13 +47,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
         MatrixInFragment matrix2InFragment = (MatrixInFragment) getFragmentManager().findFragmentById(R.id.input2_matrix_fragment);
 
         Matrix matrixIn = null, matrix1In = null, matrix2In = null;
-        if (matrixInFragment.isVisible()) {
+        if (matrixInFragment != null && matrixInFragment.isVisible()) {
             matrixIn = matrixInFragment.getMatrix();
         }
-        if (matrix1InFragment.isVisible()) {
+        if (matrix1InFragment != null && matrix1InFragment.isVisible()) {
             matrix1In = matrix1InFragment.getMatrix();
         }
-        if (matrix2InFragment.isVisible()) {
+        if (matrix2InFragment != null && matrix2InFragment.isVisible()) {
             matrix2In = matrix2InFragment.getMatrix();
         }
 

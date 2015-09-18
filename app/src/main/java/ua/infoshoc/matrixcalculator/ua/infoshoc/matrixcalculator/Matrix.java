@@ -87,11 +87,13 @@ public class Matrix implements Serializable {
         }
         int row = 0;
         Element answer = Element.ZERO;
-        Integer multiplier = row % 2 == 1 ? -1 : 1;
+        Element multiplier = row % 2 == 1 ? Element.MINUS_ONE : Element.ONE;
         for (int col = 0; col < getWidth(); ++col) {
             Matrix minor = getMinor(row, col);
-            answer = answer.add(get(row, col).multiply(minor.getDeterminant()).multiply(new Element(multiplier)));
-            multiplier *= -1;
+            Element minorDeterminant = minor.getDeterminant();
+            Element minorDeterminantElement = get(row, col).multiply(minorDeterminant);
+            answer = answer.add(minorDeterminantElement.multiply(multiplier));
+            multiplier = multiplier.multiply(Element.MINUS_ONE);
         }
         return answer;
     }
@@ -105,12 +107,12 @@ public class Matrix implements Serializable {
             if (Debug.enabled) {
                 Log.d("DEBUG", "getRREF row=" + row + " pivotCol=" + pivotCol);
             }
-            while (row != getHeight() && result.get(row, pivotCol).abs().compareTo(Element.EPS) == -1) { //result.get(row, pivotCol) === 0
+            while (row != getHeight() && result.get(row, pivotCol).compareTo(Element.ZERO) == 0) { // result.get(row, pivotCol) == 0
                 ++row;
             }
             if (row != getHeight()) {
                 result.swapRows(row, pivotRow);
-                result.multiplyRow(pivotRow, (new Element(1.0)).divide(get(pivotRow, pivotCol)));
+                result.multiplyRow(pivotRow, Element.ONE.divide(get(pivotRow, pivotCol)));
                 for (row = 0; row != getHeight(); ++row) {
                     if (row != pivotRow) {
                         result.multiplyAndAdd(row, pivotRow, get(row, pivotCol).multiply(Element.MINUS_ONE));
@@ -144,7 +146,7 @@ public class Matrix implements Serializable {
 
         Matrix result = new Matrix(getHeight(), getWidth());
         for (int row = 0; row < getHeight(); ++row) {
-            if (RREFMatrix.get(row, row).substract(Element.ONE).abs().compareTo(Element.EPS) != -1) {
+            if (RREFMatrix.get(row, row).compareTo(Element.ONE) != 0) { // RREFMatrix.get(row, row) !=  Element.ONE
                 throw new IrreversibleMatrixException();
             }
             for (int col = 0; col < getWidth(); ++col) {
@@ -189,7 +191,7 @@ public class Matrix implements Serializable {
         Matrix rrefMatrix = getRREF();
         int rank, col = -1;
         for (rank = 0; rank < rrefMatrix.getHeight(); ++rank) {
-            for (++col; col < getWidth() && rrefMatrix.get(rank, col).compareTo(Element.EPS) == -1; ++col)
+            for (++col; col < getWidth() && rrefMatrix.get(rank, col).compareTo(Element.ZERO) == 0; ++col)
                 ;
             if (col == getWidth()) {
                 break;

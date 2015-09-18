@@ -46,7 +46,7 @@ public class MatrixInFragment extends Fragment {
             TableRow tableRow = (TableRow) tableLayout.getChildAt(row);
             for (int col = 0; col < width; ++col) {
                 EditText editText = (EditText) tableRow.getChildAt(col);
-                result.set(row, col, new ua.infoshoc.matrixcalculator.Element(editText.getText().toString()));
+                result.set(row, col, new Element(editText.getText().toString()));
             }
         }
         return result;
@@ -71,7 +71,7 @@ public class MatrixInFragment extends Fragment {
     private EditText getField(Context context) {
         EditText editText = new EditText(context);
         editText.setWidth(40);
-        editText.setInputType(InputType.TYPE_CLASS_NUMBER);
+        editText.setInputType(InputType.TYPE_CLASS_TEXT);
         editText.setId(View.generateViewId());
         return editText;
     }
